@@ -12,11 +12,11 @@ classifiers = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.12"
 boto3 = "^1.17.54"
 
 xmodel = "^1"
-xinject = "^1.4.0"
+xinject = "^1.8.0"
 xloop = "^1.0.1"
 xsentinels = "^1.2.1"
 xurls = "^1"
