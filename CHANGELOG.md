@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.10.2](https://github.com/joshorr/xdynamo/compare/v0.10.1...v0.10.2) (2026-03-11)
+
+
+### Bug Fixes
+
+* update all build dependencies and unit tests. ([60ba354](https://github.com/joshorr/xdynamo/commit/60ba354acf38de86a2cd75a96fe5da2ad3bae3ec))
+
 ## [0.10.1](https://github.com/joshorr/xdynamo/compare/v0.10.0...v0.10.1) (2026-03-11)
 
 
