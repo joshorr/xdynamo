@@ -51,11 +51,6 @@ dyn_client_options = DynClientOptions.proxy()
 
 
 class DynClient(RemoteClient[M]):
-    """
-    Skeleton/Placeholder Class for future work, see story and the other classes in
-    this file for more details: https://app.clubhouse.io/xyngular/story/13989
-    """
-
     # This is only here to give IDE's a more concrete-class to use for type/code completion.
     # The type-hint is not otherwise used. That var is valid/gettable on an instance.
     # See `xmodel.remote.client.RemoteClient.api` for more details.
@@ -318,7 +313,7 @@ class DynClient(RemoteClient[M]):
         Args:
             query: Dict keys are the attribute/key names and values are what
                 to filter on for that name.  Operators after double `__` work just like you
-                would expect for our xyngular API's... here is an example:
+                would expect from a Django sort of perspective; here is an example:
 
                 ```python
                 { "some_attr_name__gte": 2 }
@@ -610,7 +605,7 @@ class DynClient(RemoteClient[M]):
             query (Query): You can give a simple dict here, modeled after how the standard rest-api
                 query dict's work. Dict keys are the attribute/key names and values are what
                 to filter on for that name.  Operators after double `__` work just like you
-                would expect for our xyngular API's... here is an example:
+                would expect from a Django sort of perspective; here is an example:
 
                 ```python
                 { "some_attr_name__gte": 2 }
