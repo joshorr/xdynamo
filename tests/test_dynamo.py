@@ -3,11 +3,9 @@ from xdynamo.api import DynApi
 from xdynamo.client import DynClient, DynClientOptions
 from xmodel import JsonModel, Field
 from typing import List, Dict, Union, Optional, Type, Any, Callable, Tuple
-import moto
 from typing import TypeVar
 import pytest
-import moto
-from moto import mock_dynamodb
+from moto import mock_aws
 import dataclasses
 from xmodel.remote import XRemoteError
 import datetime as dt
@@ -278,9 +276,8 @@ def simple_obj_get_with_read_consistency(simple_obj, simple_obj_def) -> Optional
 
 
 @pytest.fixture(autouse=True)
-@pytest.mark.order(-10)
-def mock_dynamo_db():
-    with mock_dynamodb() as mock:
+def mock_all_aws_fixture():
+    with mock_aws() as mock:
         yield mock
 
 
