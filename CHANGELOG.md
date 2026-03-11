@@ -1,6 +1,13 @@
 # Changelog
 
-## [0.10.0](https://github.com/joshorr/xdynamo/compare/v0.9.2...v0.10.0) (2024-12-12)
+## [0.10.1](https://github.com/joshorr/xdynamo/compare/v0.10.0...v0.10.1) (2026-03-11)
+
+
+### Bug Fixes
+
+* xboto dynamodb Table resource objects are NOT thread safe. ([c6920df](https://github.com/joshorr/xdynamo/commit/c6920df976bed2d812e42f96619a0df5255f2b20))
+
+## [0.10.0](https://github.com/xyngular/py-xdynamo/compare/v0.9.2...v0.10.0) (2024-12-12)
 
 
 ### Features
