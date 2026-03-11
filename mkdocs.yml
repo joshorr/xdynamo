@@ -68,7 +68,7 @@ plugins:
       version_selector: true
       css_dir: css
       javascript_dir: js
-  - git-revision-date
+  - git-revision-date-localized
   - search
   - autorefs
   - mkdocstrings:

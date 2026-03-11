@@ -75,7 +75,7 @@ with some basic data fields (str/bool).
 
 .. note:: You can see models vary similar to these in action in sine unit-tests
     Look at
-    [tests/test_dynamo.py](https://github.com/xyngular/py-xyn-model-dynamo/blob/master/tests/test_dynamo.py)
+    [tests/test_dynamo.py](https://github.com/joshorr/xdynamo/blob/main/tests/test_dynamo.py)
     in xdynamo source if your interested.
 
 >>> class ModelWithRangeKey(
@@ -402,7 +402,7 @@ that gets returned (ie: lazily execute each query as the generator runs).
 
 To get full list of operators, see operator method names on `bot3.dynamodb.conditions.Attr`
 (and it's AttributeBase superclass). Also have a mapping at `operator_alias_map` that maps
-some of our standard xyngular-api operators to how it's named in Dynamo.
+some of a more standard set of api operators to how it's named in Dynamo.
 
 I also have a list right below:
 
