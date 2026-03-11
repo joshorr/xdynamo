@@ -45,7 +45,8 @@ class DynamoTableCreator:
         raise NotImplementedError("Must Implement To Create Dynamo Table.")
 
 
-class DynamoDB(Dependency, attributes_to_skip_while_copying=["_table", "_verified", "_db"]):
+# TODO: We can thread-shar
+class DynamoDB(Dependency, attributes_to_skip_while_copying=["_table", "_verified", "_db"], thread_sharable=False):
     """
     Resource that represents a DynamoDB connection.  This allows us to pool the dynamo
     connection among everything that uses Dynamo, so that we can reuse existing connections.
