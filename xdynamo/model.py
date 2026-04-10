@@ -47,22 +47,25 @@ class DynModel(
 
     @id.setter
     def id(self, value):
-        structure = self.api.structure
-        if type(value) is str:
-            parsed_value = value.split('|')
-            hash_value = parsed_value[0]
-            range_value = parsed_value[1] if len(parsed_value) == 2 else None
+        if type(value) is not str:
+            raise NotImplementedError(
+                "Read-only for now, but want to support it. "
+                "Supporting it would involve parsing ID with DynKey, and taking hash/range key "
+                "components and setting them on the proper attributes."
+                "\n\n"
+                "Also, want to eventually support for using 'id' as a HashField "
+                "(ie: a single/only key called 'id' in dynamo-db)"
+            )
 
-            self.__setattr__(structure.dyn_hash_field.name, hash_value)
-            if range_value:
-                self.__setattr__(structure.dyn_range_field.name, range_value)
+        structure = self.api.structure
+        if not structure.dyn_range_key_name:
+            self.__setattr__(structure.dyn_hash_field.name, value)
             return
 
-        raise NotImplementedError(
-            "Read-only for now, but want to support it. "
-            "Supporting it would involve parsing ID with DynKey, and taking hash/range key "
-            "components and setting them on the proper attributes."
-            "\n\n"
-            "Also, want to eventually support for using 'id' as a HashField "
-            "(ie: a single/only key called 'id' in dynamo-db)"
-        )
+        parsed_value = value.split('|')
+        hash_value = parsed_value[0]
+        range_value = parsed_value[1] if len(parsed_value) == 2 else None
+
+        self.__setattr__(structure.dyn_hash_field.name, hash_value)
+        if range_value:
+            self.__setattr__(structure.dyn_range_field.name, range_value)
