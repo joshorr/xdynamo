@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.10.3](https://github.com/joshorr/xdynamo/compare/v0.10.2...v0.10.3) (2026-04-10)
+
+
+### Bug Fixes
+
+* don't assume table as a sort key field. ([a7e92e2](https://github.com/joshorr/xdynamo/commit/a7e92e2a2c872823100a4191a6a508a347eb9582))
+
 ## [0.10.2](https://github.com/joshorr/xdynamo/compare/v0.10.1...v0.10.2) (2026-03-11)
 
 
