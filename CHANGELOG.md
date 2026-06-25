@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.10.4](https://github.com/joshorr/xdynamo/compare/v0.10.3...v0.10.4) (2026-06-25)
+
+
+### Bug Fixes
+
+* Remove unneeded import. ([efa1e57](https://github.com/joshorr/xdynamo/commit/efa1e57d7852345e2d5ec4874be16d18d0945c0b))
+
 ## [0.10.3](https://github.com/joshorr/xdynamo/compare/v0.10.2...v0.10.3) (2026-04-10)
 
 
