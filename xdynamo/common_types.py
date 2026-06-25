@@ -2,8 +2,6 @@ import dataclasses
 from enum import Enum, auto as EnumAuto  # noqa
 from typing import TYPE_CHECKING, Union, Any, Optional, Dict, Iterable, Tuple, Set, Type
 
-from tomlkit import value
-
 from xdynamo.errors import XModelDynamoError, XModelDynamoNoHashKeyDefinedError
 from xmodel.remote import XRemoteError
 from xmodel.base.fields import Converter
