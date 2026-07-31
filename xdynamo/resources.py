@@ -99,7 +99,7 @@ class _DynBatchResource(DependencyPerThread):
     # This allows us to be compatible with both v2 and v3 of xinject.
     #
     # It only makes sense to have _DynBatchResource on a single-thread.
-    writers: Dict[id, 'DynBatch']
+    writers: Dict[int, 'DynBatch']
 
     def __init__(self):
         self.writers = {}

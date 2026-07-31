@@ -18,18 +18,18 @@ from __future__ import annotations
 
 import logging
 from typing import Any, Dict, Optional
+from .settings import _auto_create_table_only_in_environments
 
 from botocore.exceptions import ClientError
 from xinject import Dependency
 
 from xboto.resource import dynamodb
 from .errors import XModelDynamoError
+from . import settings as _xdynamo_settings
 
 log = logging.getLogger(__name__)
 
 __all__ = ["DynamoTableCreator", "DynamoDB"]
-
-_auto_create_table_only_in_environments = {'unittest', 'local'}
 
 
 class DynamoTableCreator:
@@ -96,18 +96,8 @@ class DynamoDB(Dependency, attributes_to_skip_while_copying=["_table", "_verifie
         """
         verified = self._verified.get(name, False)
 
-        try:
-            from xcon import xcon_settings
-            # We only verify/create-table-if-needed in specific environments.
-            if xcon_settings.environment not in _auto_create_table_only_in_environments:
-                verified = True
-        except ImportError:
-            # If `xcon` unavailable, just assume we don't want to auto-create tables
-            # todo: Put in a configurable setting that allows one to turn on/off
-            #       auto-table-creation.
-            #       (and some way to communicate billing mode???).
-            #
-            # todo: Log about why not creating tables, but log it only once.
+        # We only verify/create-table-if-needed in specific environments.
+        if not _xdynamo_settings.should_auto_create_callable(name):
             verified = True
 
         table = self._tables.get(name)
