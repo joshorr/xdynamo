@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.11.0](https://github.com/joshorr/xdynamo/compare/v0.10.4...v0.11.0) (2026-07-31)
+
+
+### Features
+
+* add ability to customize default name via generator. ([3d786c5](https://github.com/joshorr/xdynamo/commit/3d786c52221233d2fb48618ce451ce10ce2d8964))
+* add ability to customize default name via generator. ([29cef4b](https://github.com/joshorr/xdynamo/commit/29cef4b31ecb5de97082578711b90939f0d5a49b))
+
 ## [0.10.4](https://github.com/joshorr/xdynamo/compare/v0.10.3...v0.10.4) (2026-06-25)
 
 
